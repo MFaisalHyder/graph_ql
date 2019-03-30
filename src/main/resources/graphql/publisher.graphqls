@@ -1,0 +1,31 @@
+input PublisherInput {
+    ID: Int!
+    name: String
+    licenseNumber: String!
+    address: String
+    contactNumber: String
+
+}
+
+type Publisher {
+    ID: ID!
+    name: String!
+    licenseNumber: String!
+    address: String!
+    contactNumber: String!
+    books: [Book]
+
+}
+
+extend type Query {
+    findAllPublishers: [Publisher]!
+    findPublisherByLicenseNumber(licenseNumber: String!) : Publisher!
+    findPublisherByContactNumber(contactNumber: String!) : Publisher!
+
+}
+
+extend type Mutation {
+    registerPublisher(name: String!, licenseNumber: String! address: String!, contactNumber: String!) : Publisher!
+    updatePublisherInfo(publisher: PublisherInput!) : Publisher!
+
+}

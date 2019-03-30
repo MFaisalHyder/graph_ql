@@ -1,0 +1,38 @@
+type Author {
+    ID: ID!
+    firstName: String!
+    middleName: String
+    lastName: String!
+    residentialAddress: String!
+    officeAddress: String
+    mobileNumber: String!
+    telephoneNumber: String
+    identityType: String!
+    identityNumber: String!
+    gender: String!
+
+}
+
+type Query {
+    findAllAuthors: [Author]!
+    totalAuthorsCount: Long!
+    findAuthorsByFirstName(firstName: String!): [Author]!
+
+
+}
+
+type Mutation {
+    addAuthor(
+        firstName: String!,
+        middleName: String,
+        lastName: String!,
+        residentialAddress: String!,
+        officeAddress: String!,
+        mobileNumber: String!,
+        telephoneNumber: String,
+        identityType: String!,
+        identityNumber: String!,
+        gender: String!
+    ): Author!
+
+}
