@@ -70,31 +70,4 @@ public class Book {
         this.publishers = publishers;
     }
 
-/*
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Book)) return false;
-        Book book = (Book) o;
-        return getID() == book.getID() &&
-                getPageCount() == book.getPageCount() &&
-                Objects.equals(getTitle(), book.getTitle()) &&
-                Objects.equals(getISBN(), book.getISBN()) &&
-                Objects.equals(getAuthor(), book.getAuthor()) &&
-                Objects.equals(publishers, book.publishers);
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "ID=" + ID +
-                ", title='" + title + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", pageCount=" + pageCount +
-                ", author=" + author +
-                ", publishers=" + publishers +
-                '}';
-    }
-*/
-
 }

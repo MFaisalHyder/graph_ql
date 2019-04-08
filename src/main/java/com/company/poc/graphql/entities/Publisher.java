@@ -10,7 +10,7 @@ public class Publisher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID;
+    private long ID;
 
     private String name;
 
@@ -27,19 +27,20 @@ public class Publisher {
 
     }
 
-    public Publisher(Long ID, String name, String licenseNumber, String address, String contactNumber) {
+    public Publisher(long ID, String name, String licenseNumber, String address, String contactNumber, Set<Book> books) {
         this.ID = ID;
         this.name = name;
         this.licenseNumber = licenseNumber;
         this.address = address;
         this.contactNumber = contactNumber;
+        this.books = books;
     }
 
-    public Long getID() {
+    public long getID() {
         return ID;
     }
 
-    public void setID(Long ID) {
+    public void setID(long ID) {
         this.ID = ID;
     }
 
@@ -83,29 +84,4 @@ public class Publisher {
         this.books = books;
     }
 
-  /*  @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Publisher)) return false;
-        Publisher publisher = (Publisher) o;
-        return getID() == publisher.getID() &&
-                Objects.equals(getName(), publisher.getName()) &&
-                Objects.equals(getLicenseNumber(), publisher.getLicenseNumber()) &&
-                Objects.equals(getAddress(), publisher.getAddress()) &&
-                Objects.equals(getContactNumber(), publisher.getContactNumber()) &&
-                Objects.equals(getBooks(), publisher.getBooks());
-    }
-
-    @Override
-    public String toString() {
-        return "Publisher{" +
-                "ID=" + ID +
-                ", name='" + name + '\'' +
-                ", licenseNumber='" + licenseNumber + '\'' +
-                ", address='" + address + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
-                ", books=" + books +
-                '}';
-    }
-*/
 }

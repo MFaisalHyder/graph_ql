@@ -141,44 +141,4 @@ public class Author {
         this.gender = gender;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Author)) return false;
-        Author author = (Author) o;
-        return getID() == author.getID() &&
-                Objects.equals(getFirstName(), author.getFirstName()) &&
-                Objects.equals(getMiddleName(), author.getMiddleName()) &&
-                Objects.equals(getLastName(), author.getLastName()) &&
-                Objects.equals(getResidentialAddress(), author.getResidentialAddress()) &&
-                Objects.equals(getOfficeAddress(), author.getOfficeAddress()) &&
-                Objects.equals(getMobileNumber(), author.getMobileNumber()) &&
-                Objects.equals(getTelephoneNumber(), author.getTelephoneNumber()) &&
-                Objects.equals(getIdentityType(), author.getIdentityType()) &&
-                Objects.equals(getIdentityNumber(), author.getIdentityNumber()) &&
-                Objects.equals(getGender(), author.getGender());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getID(), getFirstName(), getMiddleName(), getLastName(), getResidentialAddress(), getOfficeAddress(), getMobileNumber(), getTelephoneNumber(), getIdentityType(), getIdentityNumber(), getGender());
-    }
-
-    @Override
-    public String toString() {
-        return "Author{" +
-                "ID=" + ID +
-                ", firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", residentialAddress='" + residentialAddress + '\'' +
-                ", officeAddress='" + officeAddress + '\'' +
-                ", mobileNumber='" + mobileNumber + '\'' +
-                ", telephoneNumber='" + telephoneNumber + '\'' +
-                ", identityType='" + identityType + '\'' +
-                ", identityNumber='" + identityNumber + '\'' +
-                ", gender='" + gender + '\'' +
-                '}';
-    }
-
 }
