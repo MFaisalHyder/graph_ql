@@ -1,6 +1,6 @@
 package com.company.poc.graphql.resolvers;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import com.company.poc.graphql.dto.PublisherDTO;
 import com.company.poc.graphql.entities.Author;
 import com.company.poc.graphql.entities.Book;
 import com.company.poc.graphql.entities.Publisher;
@@ -9,6 +9,7 @@ import com.company.poc.graphql.exception.PublisherNotFoundException;
 import com.company.poc.graphql.repository.AuthorRepository;
 import com.company.poc.graphql.repository.BookRepository;
 import com.company.poc.graphql.repository.PublisherRepository;
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -124,7 +125,7 @@ public class Mutation implements GraphQLMutationResolver {
 
     }
 
-    public Publisher updatePublisherInfo(Publisher publisher) {
+    public Publisher updatePublisherInfo(PublisherDTO publisher) {
         Publisher registerPublisher = null;
         if (publisher != null) {
             registerPublisher = publisherRepository.findByLicenseNumber(publisher.getLicenseNumber());
@@ -140,6 +141,12 @@ public class Mutation implements GraphQLMutationResolver {
 
             publisherRepository.save(registerPublisher);
         }
+
+        /*
+        Publisher p = publisherRepository.findById(-6L).orElse(null);
+        List<Book> allBooksByGivenAuthorID = bookRepository.findByAuthorID(1L);
+        List<Book> allBooksByGivenPublisherID = bookRepository.findByPublishers(p);
+        */
 
         return registerPublisher;
     }
