@@ -1,5 +1,5 @@
 input PublisherInput {
-    ID: Int!
+    ID: ID!
     name: String
     licenseNumber: String!
     address: String
